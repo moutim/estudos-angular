@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GetDogsModule } from './get-dogs/get-dogs.module';
 import { HttpClientModule } from '@angular/common/http';
+import { EventListennerComponent } from './event-listenner/event-listenner.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EventListennerComponent,
   ],
   imports: [
     BrowserModule,
