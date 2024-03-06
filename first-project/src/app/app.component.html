@@ -122,9 +122,13 @@
         </defs>
       </svg>
       <h1>Random dogs</h1>
+      <h2>Call API</h2>
     </div>
   </div>
   <app-get-dogs></app-get-dogs>
+
+  <hr>
+
   <div>
     <h4>Input properties</h4>
     <app-input-property [nome]="title"></app-input-property>
@@ -134,9 +138,16 @@
     <h4>Output properties</h4>
     <app-output-property (mudouValor)="onMudouValor($event)" ></app-output-property>
   </div>
+
   <hr>
 
+  <h3>Event listenner</h3>
   <app-event-listenner></app-event-listenner>
+
+  <hr>
+
+  <h3>Ciclo de vida</h3>
+  <app-ciclo></app-ciclo>
 </main>
 
 

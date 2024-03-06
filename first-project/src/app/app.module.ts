@@ -9,6 +9,7 @@ import { EventListennerComponent } from './event-listenner/event-listenner.compo
 import { FormsModule } from '@angular/forms';
 import { InputPropertyComponent } from './input-property/input-property.component';
 import { OutputPropertyComponent } from './output-property/output-property.component';
+import { CicloComponent } from './ciclo/ciclo.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { OutputPropertyComponent } from './output-property/output-property.compo
     EventListennerComponent,
     InputPropertyComponent,
     OutputPropertyComponent,
+    CicloComponent,
   ],
   imports: [
     BrowserModule,
