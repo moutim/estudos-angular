@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'VALOR PASSADO PARA O INPUT PROPERTIES';
+
+  onMudouValor(event: Object) {
+    console.log(event);
+  }
 }

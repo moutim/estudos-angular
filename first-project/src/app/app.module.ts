@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { EventListennerComponent } from './event-listenner/event-listenner.component';
 import { FormsModule } from '@angular/forms';
 import { InputPropertyComponent } from './input-property/input-property.component';
+import { OutputPropertyComponent } from './output-property/output-property.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventListennerComponent,
     InputPropertyComponent,
+    OutputPropertyComponent,
   ],
   imports: [
     BrowserModule,

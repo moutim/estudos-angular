@@ -129,6 +129,11 @@
     <h4>Input properties</h4>
     <app-input-property [nome]="title"></app-input-property>
   </div>
+
+  <div>
+    <h4>Output properties</h4>
+    <app-output-property (mudouValor)="onMudouValor($event)" ></app-output-property>
+  </div>
   <hr>
 
   <app-event-listenner></app-event-listenner>
