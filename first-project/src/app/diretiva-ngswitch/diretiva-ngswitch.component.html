@@ -1,0 +1,14 @@
+<h5>*ngSwitch</h5>
+
+<div>
+  <a (click)="elementoAtivo = 'home'">Home</a>
+  <a (click)="elementoAtivo = 'mapa'">Mapa</a>
+  <a (click)="elementoAtivo = 'list'">Lista</a>
+</div>
+
+<div class="switchcase" [ngSwitch]="elementoAtivo">
+  <div *ngSwitchCase="'home'">Modo home</div>
+  <div *ngSwitchCase="'mapa'">Modo mapa</div>
+  <div *ngSwitchCase="'list'">Modo lista</div>
+  <div *ngSwitchDefault>Default</div>
+</div>
