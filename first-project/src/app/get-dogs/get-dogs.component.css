@@ -1,0 +1,15 @@
+.dog-picture {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.div-dogs {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-dogs button {
+  margin: 20px 0;
+  width: 250px;
+}
