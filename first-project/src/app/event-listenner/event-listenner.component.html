@@ -4,7 +4,23 @@
     (keyup.enter)="salvarValor(campoInput.value)"
     #campoInput
   >
-
   <p>Valor atual: {{ valorAtual }}</p>
   <p>Valor salvo: {{ valorSalvo }}</p>
+
+  <div>
+    <p>Meu nome é {{ infos.nome }} e tenho {{ infos.idade }} anos</p>
+    <label for="">
+      Nome
+      <input type="text"
+        [(ngModel)]="infos.nome"
+      >
+    </label>
+
+    <label for="">
+      Idade
+      <input type="text"
+        [(ngModel)]="infos.idade"
+      >
+    </label>
+  </div>
 </div>

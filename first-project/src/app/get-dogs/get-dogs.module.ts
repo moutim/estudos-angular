@@ -4,7 +4,7 @@ import { GetDogsComponent } from './get-dogs.component';
 
 @NgModule({
   declarations: [
-    GetDogsComponent
+    GetDogsComponent,
   ],
   imports: [
     CommonModule

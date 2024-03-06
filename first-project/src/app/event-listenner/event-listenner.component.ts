@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
 export class EventListennerComponent {
   valorAtual: string = '';
   valorSalvo: string = '';
+  infos = {
+    nome: '',
+    idade: ''
+  };
 
   onKeyUp(event: KeyboardEvent) {
     this.valorAtual = (<HTMLInputElement>event.target).value;

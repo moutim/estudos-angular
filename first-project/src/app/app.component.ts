@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'first-project';
+  title = 'VALOR PASSADO PARA O INPUT PROPERTIES';
 }

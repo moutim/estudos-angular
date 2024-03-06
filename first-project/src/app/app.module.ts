@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { GetDogsModule } from './get-dogs/get-dogs.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EventListennerComponent } from './event-listenner/event-listenner.component';
+import { FormsModule } from '@angular/forms';
+import { InputPropertyComponent } from './input-property/input-property.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventListennerComponent,
+    InputPropertyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GetDogsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
