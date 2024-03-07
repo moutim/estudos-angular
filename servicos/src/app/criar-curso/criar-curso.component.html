@@ -1,0 +1,15 @@
+<h4>Compartilhar services entre components</h4>
+
+<div>
+  <label for="addCurso">
+    Adicione o nome do curso
+    <input type="text" #cursoInput id="addCurso">
+    <button (click)="onAddCurso(cursoInput.value)">Adicionar curso</button>
+  </label>
+</div>
+
+<ul>
+  <li *ngFor="let item of cursos, let i = index">
+    {{ i + 1 }} - {{ item }}
+  </li>
+</ul>
