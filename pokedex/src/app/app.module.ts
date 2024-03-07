@@ -4,6 +4,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokedexModule } from './pokedex/pokedex.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { PokedexModule } from './pokedex/pokedex.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PokedexModule
+    PokedexModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
