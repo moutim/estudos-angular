@@ -12,4 +12,8 @@ export class ConverterService {
   getCurrencies() {
     return this.http.get(`${this.host}/currencies`);
   }
+
+  convertValue(amount: string, from: string, to: string) {
+    return this.http.get(`${this.host}/latest?amount=${amount}&from=${from}&to=${to}`);
+  }
 }

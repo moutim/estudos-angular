@@ -1,24 +1,32 @@
 <div class="converter-box">
   <div>
     <label for="from">From</label>
-    <select id="from">
+    <select [(ngModel)]="fromCurrency" id="from">
       <option value="{{ item.key }}" *ngFor="let item of currencies | keyvalue">
         {{ item.value }}
       </option>
     </select>
   </div>
 
-  <div>
-    <label for="">Value</label>
-    <input type="text">
+  <div class="box-value">
+    <label for="">Amount</label>
+    <input [(ngModel)]="amount" type="text">
   </div>
 
   <div>
     <label for="from">To</label>
-    <select id="from">
+    <select [(ngModel)]="toCurrency" id="from">
       <option value="{{ item.key }}" *ngFor="let item of currencies | keyvalue">
         {{ item.value }}
       </option>
     </select>
   </div>
+</div>
+
+<div>
+  <button (click)="convert()">Convert</button>
+</div>
+
+<div>
+  <p>Converted value: {{ convertedAmount }}</p>
 </div>

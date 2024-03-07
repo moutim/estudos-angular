@@ -7,7 +7,13 @@ import { ConverterService } from './converter.service';
   styleUrl: './converter.component.css'
 })
 export class ConverterComponent {
-  currencies: string[] = ['teste'];
+  currencies: string[] = [];
+
+  fromCurrency: string = '';
+  toCurrency: string = '';
+  amount: string = '';
+
+  convertedAmount: string = '';
 
   constructor(private converterService: ConverterService) {
     this.getCurrencies();
@@ -17,10 +23,22 @@ export class ConverterComponent {
     this.converterService.getCurrencies().subscribe({
       next: (info: Object) => {
         const currencies = info as string[];
-        console.log(info);
 
         this.currencies = currencies;
       }
     })
+  }
+
+  convert() {
+    this.converterService.convertValue(this.amount, this.fromCurrency, this.toCurrency).subscribe({
+      next: (result: Object) => {
+        const converted = result as any;
+        console.log(result.rates[this.toCurrency]);
+      }
+    });
+
+    console.log(this.amount);
+    console.log(this.fromCurrency);
+    console.log(this.toCurrency);
   }
 }
