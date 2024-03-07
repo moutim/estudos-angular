@@ -5,6 +5,10 @@
   justify-content: space-around;
 }
 
+div {
+  margin: 0 10px;
+}
+
 .converter-box > div {
   display: flex;
   flex-direction: column;

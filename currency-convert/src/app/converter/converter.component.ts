@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { ConverterService } from './converter.service';
 
+type convertedObject = {
+  amount: number;
+  base: string;
+  date: string;
+  rates: Object;
+}
+
 @Component({
   selector: 'app-converter',
   templateUrl: './converter.component.html',
@@ -32,8 +39,13 @@ export class ConverterComponent {
   convert() {
     this.converterService.convertValue(this.amount, this.fromCurrency, this.toCurrency).subscribe({
       next: (result: Object) => {
-        const converted = result as any;
-        console.log(result.rates[this.toCurrency]);
+        const converted = result as convertedObject;
+
+        const amountConverted: string = Object.entries(converted.rates)[0][1];
+        const amountFormated = Number(amountConverted).toFixed(2);
+
+
+        this.convertedAmount = `${this.amount} ${this.fromCurrency} is equal to ${amountFormated} ${this.toCurrency}`;
       }
     });
 
