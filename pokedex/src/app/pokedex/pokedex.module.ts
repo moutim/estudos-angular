@@ -4,8 +4,6 @@ import { PokedexComponent } from './pokedex.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 import { PokedexService } from './pokedex.service';
 
-
-
 @NgModule({
   declarations: [
     PokedexComponent,

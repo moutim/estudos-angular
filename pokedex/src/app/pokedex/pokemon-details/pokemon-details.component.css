@@ -1,8 +1,40 @@
 .card-pokemon-details {
   background-color: white;
   width: 150px;
+  height: 170px;
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-pokemon-details p {
+  margin: 0;
+}
+
+.card-pokemon-details div {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card-pokemon-details > div:nth-child(1) {
+  width: 65%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-pokemon-details img {
   width: 100%;
+  max-height: 100%;
+  margin: 0 5px;
+  object-fit: cover;
+}
+
+.pokemon-name {
+  font-weight: bold;
+  font-size: 20px;
 }

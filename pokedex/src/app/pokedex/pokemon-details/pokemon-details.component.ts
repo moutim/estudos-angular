@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './pokemon-details.component.css'
 })
 export class PokemonDetailsComponent {
-
+  @Input() id: number = 0;
+  @Input() name: string = '';
+  @Input() baseExperience: string = '';
+  @Input() type: string = '';
+  @Input() image: string = '';
 }

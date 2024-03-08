@@ -1,4 +1,6 @@
-interface IListPokemon {
+import IResultsPokemon from "./IResultsPokemon";
+
+export default interface IListPokemon {
   count: number;
   next: string;
   previous?: string;

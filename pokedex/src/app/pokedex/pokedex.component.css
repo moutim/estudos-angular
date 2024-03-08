@@ -6,3 +6,11 @@ label {
 label input {
   padding: 10px;
 }
+
+.deck-pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 900px;
+  margin: auto;
+}

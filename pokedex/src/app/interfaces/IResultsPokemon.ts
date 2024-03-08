@@ -1,4 +1,4 @@
-interface IResultsPokemon {
+export default interface IResultsPokemon {
   name: string;
   url: string;
 }

@@ -4,7 +4,16 @@
     <input type="text" id="search" placeholder="Pikachu">
   </label>
 
-  <div>
-    <app-pokemon-details></app-pokemon-details>
+  <div class="deck-pokemon" *ngIf="listSpecsPokemons && listSpecsPokemons.length > 0">
+    <app-pokemon-details
+      *ngFor="let pokemon of listSpecsPokemons"
+      [id]="pokemon.id"
+      [name]="pokemon.name"
+      [baseExperience]="pokemon.baseExperience"
+      [type]="pokemon.type"
+      [image]="pokemon.image"
+    >
+    </app-pokemon-details>
   </div>
+
 </div>
