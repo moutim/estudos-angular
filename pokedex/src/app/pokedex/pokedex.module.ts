@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PokedexComponent } from './pokedex.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 import { PokedexService } from './pokedex.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { PokedexService } from './pokedex.service';
     PokemonDetailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     PokedexComponent

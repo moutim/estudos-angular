@@ -1,7 +1,7 @@
 <div>
   <label for="search">
     Digite o nome de um pokemon
-    <input type="text" id="search" placeholder="Pikachu">
+    <input [(ngModel)]="searchName" (ngModelChange)="searchPokemonByName(searchName)" type="text" id="search" placeholder="Pikachu">
   </label>
 
   <div class="deck-pokemon" *ngIf="listSpecsPokemons && listSpecsPokemons.length > 0">

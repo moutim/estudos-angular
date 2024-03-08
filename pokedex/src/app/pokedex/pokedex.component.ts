@@ -10,8 +10,8 @@ import ISpecsPokemon from '../interfaces/ISpecsPokemon';
 })
 export class PokedexComponent {
   listPokemons: IListPokemon | undefined;
-
   listSpecsPokemons: ISpecsPokemon[] | undefined = [];
+  searchName: string = '';
 
   constructor(private pokedexService: PokedexService) {
   }
@@ -43,13 +43,33 @@ export class PokedexComponent {
             image: result.sprites.other.dream_world.front_default,
             type: result.types[0].type.name
           };
-          console.log(result);
-
           this.listSpecsPokemons?.push(specs);
-
         }
       });
 
+    });
+  }
+
+  searchPokemonByName(name: string) {
+    if (name == '') {
+      this.listSpecsPokemons = [];
+      this.getSpecsPokemons();
+      return;
+    }
+
+    this.listSpecsPokemons = [];
+
+    this.pokedexService.getPokemonByName(name).subscribe({
+      next: (result: any) => {
+        const specs: ISpecsPokemon = {
+          id: 1,
+          name: result.name,
+          baseExperience: result.base_experience,
+          image: result.sprites.other.dream_world.front_default,
+          type: result.types[0].type.name
+        };
+        this.listSpecsPokemons?.push(specs);
+      }
     });
   }
 }
