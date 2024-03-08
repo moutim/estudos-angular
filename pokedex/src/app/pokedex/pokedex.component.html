@@ -1,11 +1,15 @@
-<div>
-  <label for="search">
-    Digite o nome de um pokemon
-    <input [(ngModel)]="searchName" (ngModelChange)="searchPokemonByName(searchName)" type="text" id="search" placeholder="Pikachu">
-  </label>
+<div class="board-pokedex">
+  <div class="input-search">
+    <label for="search">
+      Digite o nome de um pokemon
+      <input [(ngModel)]="searchName" (ngModelChange)="searchPokemonByName(searchName)" type="text" id="search" placeholder="Pikachu">
+    </label>
+  </div>
+
 
   <div class="deck-pokemon" *ngIf="listSpecsPokemons && listSpecsPokemons.length > 0">
     <app-pokemon-details
+      class="card-pokemon"
       *ngFor="let pokemon of listSpecsPokemons"
       [id]="pokemon.id"
       [name]="pokemon.name"
@@ -16,4 +20,5 @@
     </app-pokemon-details>
   </div>
 
+  <button (click)="loadPokemons()">Carregar Pokemons</button>
 </div>

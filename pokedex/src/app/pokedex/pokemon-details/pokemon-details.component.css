@@ -35,9 +35,9 @@
 
 .card-pokemon-details img {
   width: 100%;
-  max-height: 100%;
+  max-height: 100px;
   margin: 0 5px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .pokemon-name {

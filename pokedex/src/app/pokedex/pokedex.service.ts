@@ -16,4 +16,8 @@ export class PokedexService {
   getPokemonByName(name: string) {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
+
+  getNextPagePokemons(url: string) {
+    return this.http.get(url);
+  }
 }

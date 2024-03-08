@@ -10,11 +10,11 @@ import ISpecsPokemon from '../interfaces/ISpecsPokemon';
 })
 export class PokedexComponent {
   listPokemons: IListPokemon | undefined;
-  listSpecsPokemons: ISpecsPokemon[] | undefined = [];
+  listSpecsPokemons: ISpecsPokemon[] = [];
+  nextPage: string = '';
   searchName: string = '';
 
-  constructor(private pokedexService: PokedexService) {
-  }
+  constructor(private pokedexService: PokedexService) { }
 
   ngOnInit() {
     this.getListPokemon();
@@ -26,9 +26,10 @@ export class PokedexComponent {
     this.pokedexService.getPokemon().subscribe({
       next: (result: Object) => {
         const list = result as IListPokemon;
+        this.nextPage = list.next;
         this.listPokemons = list;
       }
-    })
+    });
   }
 
   getSpecsPokemons() {
@@ -37,7 +38,7 @@ export class PokedexComponent {
       this.pokedexService.getPokemonByName(name).subscribe({
         next: (result: any) => {
           const specs: ISpecsPokemon = {
-            id: index + 1,
+            id: this.listSpecsPokemons.length + 1,
             name: result.name,
             baseExperience: result.base_experience,
             image: result.sprites.other.dream_world.front_default,
@@ -69,6 +70,17 @@ export class PokedexComponent {
           type: result.types[0].type.name
         };
         this.listSpecsPokemons?.push(specs);
+      }
+    });
+  }
+
+  loadPokemons() {
+    this.pokedexService.getNextPagePokemons(this.nextPage).subscribe({
+      next: (result: Object) => {
+        const list = result as IListPokemon;
+        this.listPokemons = list;
+        this.nextPage = list.next;
+        this.getSpecsPokemons();
       }
     });
   }
