@@ -24,10 +24,9 @@ export class PokedexComponent {
 
   getListPokemon() {
     this.pokedexService.getPokemon().subscribe({
-      next: (result: Object) => {
-        const list = result as IListPokemon;
-        this.nextPage = list.next;
-        this.listPokemons = list;
+      next: (result: IListPokemon) => {
+        this.nextPage = result.next;
+        this.listPokemons = result;
       }
     });
   }
@@ -53,7 +52,9 @@ export class PokedexComponent {
 
   searchPokemonByName(name: string) {
     if (name == '') {
-      this.listSpecsPokemons = [];
+      // this.listPokemons = undefined;
+      // this.listSpecsPokemons = [];
+      this.getListPokemon();
       this.getSpecsPokemons();
       return;
     }
@@ -70,6 +71,8 @@ export class PokedexComponent {
           type: result.types[0].type.name
         };
         this.listSpecsPokemons?.push(specs);
+      }, error: () => {
+        console.log('deu erro')
       }
     });
   }

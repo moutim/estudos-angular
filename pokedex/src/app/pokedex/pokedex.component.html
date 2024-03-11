@@ -8,6 +8,7 @@
 
 
   <div class="deck-pokemon" *ngIf="listSpecsPokemons && listSpecsPokemons.length > 0">
+    <!-- Passar como input properties apenas um objeto com todas as ifnormacoes do pokemon -->
     <app-pokemon-details
       class="card-pokemon"
       *ngFor="let pokemon of listSpecsPokemons"
