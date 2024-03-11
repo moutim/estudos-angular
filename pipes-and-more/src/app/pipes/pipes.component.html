@@ -1,0 +1,28 @@
+<div>
+  <h4>Pipes</h4>
+  <p>Titulo: {{ livro.titulo | uppercase | camelCase }}</p>
+  <p>Estrelas: {{ livro.rating | number:'1.1-1' }}</p>
+  <p>Págias: {{ livro.numeroPaginas | number }}</p>
+  <p>Preço: {{ livro.preco | currency: 'BRL':true }}</p>
+  <p>Data lançamento: {{ livro.dataLancamento | date:'dd-MMMM-yyyy' }}</p>
+
+  <h4>Pipe puro</h4>
+  <div>
+    <label for="">
+      Encontrar curso
+      <input type="text" [(ngModel)]="filtro">
+    </label>
+  </div>
+  <div>
+    <label for="">
+      Adicionar curso
+      <input type="text" #curso>
+    </label>
+    <button (click)="AdicionarCurso(curso.value)">Adicionar curso</button>
+  </div>
+  <ul>
+    <li *ngFor="let item of EncontrarCurso()">
+      {{ item }}
+    </li>
+  </ul>
+</div>
