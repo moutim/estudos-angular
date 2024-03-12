@@ -5,6 +5,7 @@ import { CursosDetalheComponent } from './cursos-detalhe/cursos-detalhe.componen
 import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 import { CursosService } from './cursos.service';
 import { RouterModule } from '@angular/router';
+import { CursosRoutingModule } from './cursos.routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    CursosRoutingModule
+    // RouterModule
   ],
   exports: [
     CursosComponent,

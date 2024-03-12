@@ -1,1 +1,13 @@
-<p>login works!</p>
+<h4>Login</h4>
+
+<label for="email">
+  Email
+  <input [(ngModel)]="usuario.email" type="text" id="email">
+</label>
+
+<label for="senha">
+  Senha
+  <input [(ngModel)]="usuario.senha" type="text" id="senha">
+</label>
+
+<button (click)="entrar()">Entrar</button>
