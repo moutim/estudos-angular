@@ -1,1 +1,13 @@
-<p>cursos works!</p>
+<h3>Lista de links para os cursos</h3>
+
+<div>
+  <ul>
+    <li *ngFor="let curso of cursos">
+      <a [routerLink]="['/cursos', curso.id]">
+        {{ curso.nome }}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<button (click)="proximaPagina()">Proxima pagina</button>

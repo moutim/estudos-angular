@@ -1,7 +1,7 @@
 <nav>
   <ul>
     <li> <a [routerLink]="['/']">Home</a> </li>
-    <li> <a [routerLink]="['/cursos']" routerLinkActive="router-link-active" >Cursos</a> </li>
+    <li> <a [routerLink]="['/cursos']" [queryParams]="{pagina:1}" routerLinkActive="router-link-active" >Cursos</a> </li>
     <li> <a [routerLink]="['/cursos', '2']" routerLinkActive="router-link-active" >Cursos com id</a> </li>
     <li> <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a> </li>
   </ul>
