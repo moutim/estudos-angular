@@ -25,7 +25,7 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     provideClientHydration(),
-    AuthService
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })

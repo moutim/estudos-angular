@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private usuarioAutenticado: boolean = false;
+  usuarioAutenticado: boolean = false;
 
   mostrarMenuEmiiter = new EventEmitter<boolean>();
 
@@ -18,8 +18,16 @@ export class AuthService {
       this.mostrarMenuEmiiter.emit(true);
       this.router.navigate(['/']);
     } else {
-    this.usuarioAutenticado = false;
-    this.mostrarMenuEmiiter.emit(false);
+      this.usuarioAutenticado = false;
+      this.mostrarMenuEmiiter.emit(false);
+    }
   }
+
+  estaLogado() {
+    return this.usuarioAutenticado ? true : false;
+  }
+
+  logout() {
+    this.router.navigate(['/login']);
   }
 }
