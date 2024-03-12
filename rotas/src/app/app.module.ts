@@ -9,12 +9,14 @@ import { CursosModule } from './cursos/cursos.module';
 import { AlunosModule } from './alunos/alunos.module';
 import { AuthService } from './login/auth.service';
 import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
