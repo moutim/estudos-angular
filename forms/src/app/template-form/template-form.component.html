@@ -1,0 +1,60 @@
+<form class="form-horizontal" #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input required type="email" class="form-control" id="email" name="email" [(ngModel)]="usuario.email" #email="ngModel">
+    <div *ngIf="!email.valid && email.touched" id="emailHelp" class="alert alert-danger">Digite um email</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input required type="text" class="form-control" id="name" name="nome" [(ngModel)]="usuario.nome" #nome="ngModel">
+    <div *ngIf="!nome.valid && nome.touched" id="emailHelp" class="alert alert-danger">Digite um nome</div>
+  </div>
+</form>
+
+<div class="form-group row">
+  <div class="col-md-3">
+    <label for="cep" class="control-label">CEP</label>
+    <input (blur)="consultaCEP($event)" type="text" class="form-control" id="cep" name="cep" [(ngModel)]="endereco.cep" required #cep="ngModel">
+    <div *ngIf="!cep.valid && cep.touched" id="emailHelp" class="alert alert-danger">Digite um CEP</div>
+  </div>
+
+  <div class="col-md-3">
+    <label for="numero" class="control-label">Número</label>
+    <input type="text" class="form-control" id="numero" name="numero" [(ngModel)]="endereco.numero" required #numero="ngModel">
+    <div *ngIf="!numero.valid && numero.touched" id="emailHelp" class="alert alert-danger">Digite um numero</div>
+  </div>
+
+  <div class="col-md-6">
+    <label for="complemento" class="control-label">Complemento</label>
+    <input type="text" class="form-control" id="complemento" name="complemento" [(ngModel)]="endereco.complemento" required #complemento="ngModel">
+    <div *ngIf="!complemento.valid && complemento.touched" id="emailHelp" class="alert alert-danger">Digite um complemento</div>
+  </div>
+
+  <div class="col-md-12">
+    <label for="rua" class="control-label">Rua</label>
+    <input type="text" class="form-control" id="rua" name="rua" [(ngModel)]="endereco.rua" required #rua="ngModel">
+    <div *ngIf="!rua.valid && rua.touched" id="emailHelp" class="alert alert-danger">Digite um rua</div>
+  </div>
+
+  <div class="col-md-6">
+    <label for="bairro" class="control-label">Bairro</label>
+    <input type="text" class="form-control" id="bairro" name="bairro" [(ngModel)]="endereco.bairro" required #bairro="ngModel">
+    <div *ngIf="!bairro.valid && bairro.touched" id="emailHelp" class="alert alert-danger">Digite um bairro</div>
+  </div>
+
+  <div class="col-md-3">
+    <label for="cidade" class="control-label">Cidade</label>
+    <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="endereco.cidade" required #cidade="ngModel">
+    <div *ngIf="!cidade.valid && cidade.touched" id="emailHelp" class="alert alert-danger">Digite um cidade</div>
+  </div>
+
+  <div class="col-md-3">
+    <label for="estado" class="control-label">Estado</label>
+    <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="endereco.estado" required #estado="ngModel">
+    <div *ngIf="!estado.valid && estado.touched" id="emailHelp" class="alert alert-danger">Digite um estado</div>
+  </div>
+</div>
+
+<button [disabled]="!formData.valid" type="submit" class="btn btn-primary">Submit</button>
+
