@@ -9,8 +9,46 @@
     <input type="text" class="form-control" id="name" formControlName="nome">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <button type="btn" (click)="reset()" class="btn btn-secondary">Cancel</button>
+  <div class="form-group row">
+    <div class="col-md-3">
+      <label for="cep" class="control-label">CEP</label>
+      <input (blur)="consultaCEP($event)" type="text" class="form-control" id="cep" formControlName="cep">
+    </div>
+
+    <div class="col-md-3">
+      <label for="numero" class="control-label">Número</label>
+      <input type="text" class="form-control" id="numero" formControlName="numero">
+    </div>
+
+    <div class="col-md-6">
+      <label for="complemento" class="control-label">Complemento</label>
+      <input type="text" class="form-control" id="complemento" formControlName="complemento">
+    </div>
+
+    <div class="col-md-12">
+      <label for="rua" class="control-label">Rua</label>
+      <input type="text" class="form-control" id="rua" formControlName="rua">
+    </div>
+
+    <div class="col-md-6">
+      <label for="bairro" class="control-label">Bairro</label>
+      <input type="text" class="form-control" id="bairro" formControlName="bairro">
+    </div>
+
+    <div class="col-md-3">
+      <label for="cidade" class="control-label">Cidade</label>
+      <input type="text" class="form-control" id="cidade" formControlName="cidade">
+    </div>
+
+    <div class="col-md-3">
+      <label for="estado" class="control-label">Estado</label>
+      <input type="text" class="form-control" id="estado" formControlName="estado">
+    </div>
+  </div>
+
+
 </form>
 
+<button type="submit" class="btn btn-primary">Submit</button>
+<button type="btn" (click)="reset()" class="btn btn-secondary">Cancel</button>
 
